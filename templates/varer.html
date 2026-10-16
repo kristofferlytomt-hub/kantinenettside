@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for vare in vareliste %}
+        <h1>{{vare.navn}}</h1>
+        <p>{{vare.pris}}</p>
+        <p>{{vare.beskrivelse}}</p>
+        <img src={{vare.bilde}}>
+    {% endfor%}
+    
+{% endblock %}
