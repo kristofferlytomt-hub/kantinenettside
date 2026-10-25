@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} kantine {% endblock %}</title>
+    <title>{% block title %} Kantine {% endblock %}</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <nav>
-        <a href="/">hjemmeside</a>
-        <a href="/meny">meny</a>
-        <a href="/varer">varer</a>
-        <a href="/kontakt">kontakt oss</a>
-    </nav>
+    <header>
+        <nav>
+            <a href="/" class="logo">Kantina</a>
+            <div class="button">
+                <a href="/">Hjemmeside</a>
+                <a href="/meny">Meny</a>
+                <a href="/varer">Varer</a>
+                <a href="/kontakt">kontakt oss</a>
+            </div>
+        </nav>
+    </header>
+    
     {% block content %}{% endblock %}
-    <footer></footer>
+    <footer><p>&copy; 2026 Kantina</p></footer>
 </body>
 </html>

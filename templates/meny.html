@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 class="side_tittel">Dagens Meny</h1>
 
+<div class="varer">
+    {% for vare in vareliste %}
+        {% if vare.kategori == 'Varm mat' %}
+        <div class="thing">
+            <img src="{{ vare.bilde }}" alt="{{ vare.navn }}">
+            <h3>{{ vare.navn }}</h3>
+            <p class="beskrivelse">{{ vare.beskrivelse }}</p>
+            <p class="pris">{{ vare.pris }} kr</p>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
 {% endblock %}

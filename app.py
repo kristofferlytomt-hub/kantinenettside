@@ -9,7 +9,7 @@ def index():
 
 @app.route('/meny')
 def meny():
-    return render_template('meny.html')
+    return render_template('meny.html', vareliste=varer)
 
 @app.route('/varer')
 def vareside():

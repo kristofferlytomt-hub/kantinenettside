@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for vare in vareliste %}
-        <h1>{{vare.navn}}</h1>
-        <p>{{vare.pris}}</p>
-        <p>{{vare.beskrivelse}}</p>
-        <img src={{vare.bilde}}>
-    {% endfor%}
-    
+{% for kategori, gruppe in vareliste|groupby('kategori') %}
+    {% if kategori != 'Varm mat' %}
+    <h2 class="kategori_tittel">{{ kategori }}</h2>
+    <div class="varer">
+        {% for vare in gruppe %}
+            <div class="thing">
+                <img src="{{ vare.bilde }}" alt="{{ vare.navn }}">
+                <h3>{{ vare.navn }}</h3>
+                <p class="beskrivelse">{{ vare.beskrivelse }}</p>
+                <p class="pris">{{ vare.pris }} kr</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endfor %}
 {% endblock %}
